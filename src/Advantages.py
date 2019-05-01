@@ -1,3 +1,11 @@
+def add(name):
+	item = Advantages.advantages.get(name)
+	if item:
+		return(Advantages(item["name"], item["baseCost"], item["description"], item["enhancements"], item["limitations"], item["hasLevels"], item["amount"]))
+	else:
+		print("Advantage not found: " + name)
+		return()
+
 class Advantages:
 
 	advantages = {
@@ -30,15 +38,6 @@ class Advantages:
 		self.hasLevels = hasLevels
 		self.amount = amount
 
-
-	@classmethod
-	def add(cls, name):
-		item = advantages[name]
-		if(item):
-			return(Advantages(item["name"], item["baseCost"], item["description"], item["enhancements"], item["limitations"], item["hasLevels"], item["amount"]))
-		else:
-			print("Advantage not found: " + name)
-			return()
 
 
 

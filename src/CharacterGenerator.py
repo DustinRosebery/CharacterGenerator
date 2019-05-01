@@ -24,6 +24,7 @@ class StartScreen(tk.Frame):
 		character.updateAttribute("BS", 3)
 		character.updateAttribute("BM", 2)
 		character.addNewAdvantage("360_degree_vision")
+		character.addNewAdvantage("NON_EXISTANT")
 		character.printCharacter()
 
 if __name__ == "__main__":

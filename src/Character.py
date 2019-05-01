@@ -11,7 +11,7 @@ class Character:
 		self.spentPoints = 0
 
 		self.attributes = Attributes.Attributes()
-		self.advantages = []
+		self.advantages = {}
 
 	# Updates 1 of:
 	#     Primary Attribute ST, DX, IQ, HT -or-
@@ -48,7 +48,7 @@ class Character:
 		self.attributes.updateTertiaryAttributes()
 
 	def addNewAdvantage(self, name):
-		self.advantages.append(Advantages.add(name)) 
+		self.advantages[name] = Advantages.add(name) 
 
 	def printCharacter(self):
 		print("********CHARACTER SHEET********")
@@ -82,4 +82,9 @@ class Character:
 		print("\tBS cost:\t\t" + str(self.attributes.bsSpentPoints))
 		print("\tBasic Move:\t\t" + str(self.attributes.getBasicMove()))
 		print("\tBM cost:\t\t" + str(self.attributes.bmSpentPoints))
-		print("")
+		print("\nADVANTAGES")
+		for adv in self.advantages.values() :
+			try:
+				print("\tName:\t" + adv.name)
+			except AttributeError:
+				pass
